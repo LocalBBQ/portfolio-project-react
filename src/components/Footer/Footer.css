@@ -1,0 +1,12 @@
+footer {
+    float: bottom;
+    border-style: solid;
+    border-color: rgb(137, 104, 184);
+    background-size: 100% 100%;
+    height: auto;
+  }
+  
+  aside section {
+    position: absolute;
+    border-radius: 10px;
+  }

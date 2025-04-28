@@ -1,0 +1,30 @@
+nav {
+    padding: 8px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+  }
+  
+  nav li {
+    display: block;
+    float: left;
+    width: 15%;
+    padding: 8px;
+    margin-bottom: 16px;
+    margin-top: 16px;
+  }
+  
+  nav a {
+    color: rgb(59, 59, 59);
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    color: rgb(137, 104, 184);
+  }
+  
+  nav.horizontal {
+    position: relative;
+    z-index: 10; /* Ensure it's above other elements */
+  }
