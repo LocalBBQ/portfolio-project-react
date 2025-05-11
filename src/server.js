@@ -1,6 +1,12 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 const app = express();
+
+// Enable CORS for the specified link
+app.use(cors({
+  origin: 'https://salmon-forest-03480f110.6.azurestaticapps.net/'
+}));
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'build')));

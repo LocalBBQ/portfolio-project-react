@@ -1,25 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Projects.css";
 
 const Projects = () => {
-  // Sample data for projects
-  const projects = [
-    {
-      name: "Portfolio Website",
-      description: "A personal portfolio website to showcase my skills and projects.",
-      tech_stack: "HTML, CSS, JavaScript, React",
-    },
-    {
-      name: "E-commerce Platform",
-      description: "A mock e-commerce platform with product listings and a shopping cart.",
-      tech_stack: "React, Node.js, Express, MongoDB",
-    },
-    {
-      name: "Weather App",
-      description: "A weather application that fetches real-time weather data.",
-      tech_stack: "React, OpenWeather API",
-    },
-  ];
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch('https://dotnetbackendporfolioles.azurewebsites.net/api/projects');
+        const data = await response.json();
+        setProjects(data);
+      } catch (error) {
+        console.error('Error fetching projects:', error);
+      }
+    };
+
+    fetchProjects();
+  }, []);
 
   return (
     <div className="wrap">
